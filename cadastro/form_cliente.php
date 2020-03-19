@@ -25,15 +25,11 @@
             <div class="col-md-3">
                 <label>Estado</label>
                 <select class="form-control" name="estado">
-                <option>ACRE</option><option>AMAPA</option><option>AMAZONAS</option>
-                <option>ALAGOAS</option><option>BAHIA</option><option>CEARA</option>
-                <option>DISTRITO FEDERAL</option><option>ESPIRITO SANTO</option><option>GOIAS</option>
-                <option>MARANHAO</option><option>MATO GROSSO</option><option>MATO GROSSO DO SUL</option>
-                <option>MINAS GERAIS</option><option>PARA</option><option>PARAIBA</option>
-                <option>PARANÁ</option><option>PERNAMBUCO</option><option>PIAUÍ</option>
-                <option>RIO DE JANEIRO</option><option>RIO GRANDE DO NORTE</option><option>RIO GRANDE DO SUL</option>
-                <option>RONDONIA</option><option>RORAIMA</option><option>SANTA CATARINA</option>
-                <option>SAO PAULO</option><option>SERGIPE</option><option>TOCANTINS</option>
+                <option> </option><option>AC</option><option>AP</option><option>AM</option><option>AL</option><option>BA</option><option>CE</option>
+                <option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option>
+                <option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
                 </select>
             </div>
         </div>

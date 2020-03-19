@@ -12,7 +12,7 @@ echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
 
 <html>
 <head>
-    <title>Menu Produtos</title>
+    <title>Menu Clientes</title>
     <link rel="stylesheet" href="../css/painel.css">
     <link rel="stylesheet" href="../css/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -37,9 +37,10 @@ echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
                 }
                 else
                 {
-                    echo "<br>Nome do cliente: " . $dados['nome']; 
+                    echo "<pre>Nome do cliente: " . $dados['nome']; 
                     echo "<br>Endereço: " . $dados['endereco']; 
-                    echo "<br>Cidade: " . $dados['cidade'];
+                    echo "<br>Cidade: " . $dados['cidade']; 
+                    echo '<br>'.$dados [ 'estado'] ;
                 }  
             }  
         }
@@ -72,7 +73,7 @@ echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
                         location.href='cancelar_cliente.php?id=<?php echo $dados['id'];?>'" 
                         style="text-decoration:none"><button class="btn btn-danger"><font color="white">Inativar</font>
                     </a></button>
-                    <a href="edit_cliente.php" style="text-decoration:none"><button class="btn btn-info"><font color="white">Alterar</font>
+                    <a href="edit_cliente.php?id=<?php echo $dados['id'];?>" style="text-decoration:none"><button class="btn btn-info"><font color="white">Alterar</font>
                     </a></button>
                 </td>
             </tr>

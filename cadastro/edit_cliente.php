@@ -1,0 +1,58 @@
+<?php
+include_once('../conexao.php');
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM cliente WHERE id='$id'";
+$result = mysqli_query($conexao, $sql);
+$dados = mysqli_fetch_assoc($result);
+?>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cadastros.css">
+    <title>Editar Cliente</title>
+    <link href="https://fonts.googleapis.com/css?family=Arsenal&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h4>Editar Cliente</h4>
+    <form action="update_cliente.php" id="form-cliente" method="post">
+        <input type="hidden" name="id" value="<?php echo $dados['id']?>"
+        <div class="col-sm-8">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" value="<?php echo $dados['nome']?>"name="nome">
+        </div>
+        <div class="col-sm-8">
+            <label> Endereço</label>
+            <input type="text" class="form-control" value="<?php echo $dados['endereco']?>" name="endereco">
+        </div><br>
+        <div class="form-row">
+            <div class="form-group col-sm-4">
+                <label>Cidade</label>
+                <input type="text" class="form-control" value="<?php echo $dados['cidade']?>"name="cidade">
+            </div>
+            <div class="col-md-2">
+                <label>Estado</label>
+                <select class="form-control" name="estado">
+                <option> </option><option>AC</option><option>AP</option><option>AM</option><option>AL</option><option>BA</option><option>CE</option>
+                <option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option>
+                <option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <label>Idade</label>
+            <input type="number" value="<?php echo $dados['idade']?>"name="idade">
+        </div>
+        <div id="status" class="col-md-2">
+            <label>Status</label>
+            <select class="form-control" name="status">
+            <option>ATIVO</option>
+            <option>INATIVO</option>
+        </div>
+        <br><input type="submit" class="btn btn-warning"" value="Alterar">
+    </form>
+
+</body>

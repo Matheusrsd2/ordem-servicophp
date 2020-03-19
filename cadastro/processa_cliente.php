@@ -1,7 +1,5 @@
 <?php
 
-
-
 include_once ('../conexao.php');
 
 $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
