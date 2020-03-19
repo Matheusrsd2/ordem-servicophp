@@ -15,14 +15,14 @@ include_once('../conexao.php');
     <h4>Criar Ordem de Serviço</h4>
     <form action="processa_os.php" id="form-cliente" method="post">
         <div class="col-sm-8">
-            <label>Cliente</label>
+            <label>Cliente (Somente os clientes ativos no sistema)</label>
             <select class="form-control" name="cliente">
-                <option>selecione</option>
+                <option> </option>
                 <?php
-                $sql    = "SELECT * FROM cliente";
+                $sql    = "SELECT * FROM cliente where status <> 'INATIVO'";
                 $result = mysqli_query($conexao, $sql);
                 while ($dados = mysqli_fetch_assoc($result)){ ?>
-                    <option value="<?php echo $dados['id'];?>">
+                    <option value="<?php echo $dados['nome'];?>">
                     <?php echo $dados['nome'];?>
                     </option><?php
                 } ?>
@@ -31,12 +31,12 @@ include_once('../conexao.php');
         <div class="col-sm-8">
             <label>Técnico</label>
             <select class="form-control" name="tecnico">
-                <option>selecione</option>
+                <option> </option>
                 <?php
                 $sql    = "SELECT * FROM usuario";
                 $result = mysqli_query($conexao, $sql);
                 while ($dados = mysqli_fetch_assoc($result)){ ?>
-                    <option value="<?php echo $dados['usuario_id'];?>">
+                    <option value="<?php echo $dados['nome'];?>">
                     <?php echo strtoupper($dados['nome']);?>
                     </option><?php
                 } ?>
@@ -50,8 +50,7 @@ include_once('../conexao.php');
             <label>Status</label>
             <select class="form-control" name="status">
             <option>ATIVO</option>
-        </div><br>
-        <br><input type="submit" class="btn btn-warning"" placeholder="cadastrar" name="Cadastrar">
+        </div>
+        <input type="submit" class="btn btn-warning" value="Salvar">
     </form>
-
 </body>

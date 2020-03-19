@@ -12,6 +12,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
     <title>Área do Funcionário</title>
     <link rel="stylesheet" href="css/painel.css">
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -20,33 +21,12 @@ $result = $conexao->query($sql) or die ($conexao->error);
             <span class="glyphicon glyphicon-off">
         </button>
     </div>
-    <h4 style="font-family: 'Arsenal', sans-serif;">Olá, Funcionário <?php echo strtoupper($_SESSION['nome']);?></h4><br>
-    <div id="busca">
-        <form action="" method="post">
-            <input type="text" name="id" placeholder="Pesquisar Codigo Cliente">
-            <input name="find" type="submit" value="Buscar">
-        </form>
-        <?php
-        if (isset($_POST['id']))
-        {
-            $id = ($_POST['id']);
-            $sql = "SELECT * FROM cliente where id = '{$id}'";
-            $resultado = mysqli_query($conexao, $sql);
-            if ($resultado != null){
-                while ($dados = mysqli_fetch_assoc($resultado))
-                {
-                    echo "<b>Nome do cliente:<b> " . $dados['nome'];
-                }
-            }
-            else echo 'Codigo inexistente';
-        }
-        ?>
-    </div><br>
+    <h3 style="font-family: 'Arsenal'">Olá, Funcionário <?php echo strtoupper($_SESSION['nome']);?></h3><br>
     <button class="btn btn-secondary"><a href="cadastro/form_cliente.php" style="text-decoration:none">
        <font color="white">Adicionar cliente</font></a>  <span class="glyphicon glyphicon-plus">
     </button>
     <button class="btn btn-secondary"><a href="cadastro/lista_cliente.php" style="text-decoration:none">
-        <font color="white">Listar clientes</font></a><span class="glyphicon glyphicon-user">
+        <font color="white">Listar clientes</font></a> <span class="glyphicon glyphicon-user">
     </button><br><br>
     <button class="btn btn-secondary"><a href="cadastro/form_produto.php" style="text-decoration:none">
         <font color="white">Adicionar Produto</font></a> <span class="glyphicon glyphicon-plus">
@@ -57,16 +37,15 @@ $result = $conexao->query($sql) or die ($conexao->error);
         <font color="white">Criar nova Ordem de Serviço</font></a> <span class="glyphicon glyphicon-list-alt">
     </button>
     <br><br>
-    <h4>Apenas ordens de serviço ativas aparecem aqui</h4>
+    <h4 style="font-family: 'Arsenal', sans-serif;">Apenas ordens de serviço <b>ATIVAS</b> aparecem aqui</h4>
     <table id="t1"class="table table-dark table-hover">
         <thead> 
             <tr>
-                <th>Numero OS</th>
-                <th>Cliente<br>(Código)</th>
-                <th>Técnico<br>(Código)</th>
-                <th>Produto</th>
-                <th>Data de Criação</th>
-                <th>Opções</th>
+                <th style="font-family: 'Arsenal'">Numero OS</th>
+                <th style="font-family: 'Arsenal'">Cliente</th>
+                <th style="font-family: 'Arsenal'">Técnico</th>
+                <th style="font-family: 'Arsenal'">Produto</th>
+                <th style="font-family: 'Arsenal'">Data de Criação</th>
             </tr>
         </thead>
         <tbody>

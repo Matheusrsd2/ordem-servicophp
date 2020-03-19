@@ -10,7 +10,7 @@
     <h4>Informe os dados do Cliente</h4>
     <form action="processa_cliente.php" id="form-cliente" method="post">
         <div class="col-sm-8">
-            <label>Nome</label>
+            <label>Nome Completo</label>
             <input type="text" class="form-control" name="nome">
         </div>
         <div class="col-sm-8">
@@ -46,7 +46,7 @@
             <select class="form-control" name="status">
             <option>ATIVO</option>
         </div>
-        <br><input type="submit" class="btn btn-warning"" name="Cadastrar">
+        <br><input type="submit" class="btn btn-warning"" value="Cadastrar">
     </form>
 
 </body>

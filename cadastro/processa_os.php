@@ -21,7 +21,7 @@ else
 
     if ($result)
     {
-        echo "<script> alert('Sucesso!');
+        echo "<script> alert('Ordem de Serviço criada com sucesso!');
         location.href='../painel.php'; 
         </script>";
     }

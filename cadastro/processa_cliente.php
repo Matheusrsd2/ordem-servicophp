@@ -9,8 +9,9 @@ $endereco = mysqli_real_escape_string($conexao, trim($_POST['endereco']));
 $cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
 $estado = mysqli_real_escape_string($conexao, trim($_POST['estado']));
 $idade = mysqli_real_escape_string($conexao, trim($_POST['idade']));
+$status = mysqli_real_escape_string($conexao, trim($_POST['status']));
 
-$sql = "INSERT INTO cliente (nome, endereco, cidade, estado, idade) VALUES ('$nome', '$endereco', '$cidade', '$estado','$idade')";
+$sql = "INSERT INTO cliente (nome, endereco, cidade, estado, idade, status) VALUES ('$nome', '$endereco', '$cidade', '$estado','$idade','$status')";
 
 if ($nome == null)
 {
