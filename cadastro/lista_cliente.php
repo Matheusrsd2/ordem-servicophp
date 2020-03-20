@@ -5,9 +5,6 @@ include_once('../conexao.php');
 $sql    = "SELECT * FROM cliente";
 $result = $conexao->query($sql) or die ($conexao->error);
 
-$query = mysqli_query($conexao,"SELECT count(*) as total from cliente");
-$resultado = mysqli_fetch_assoc($query);
-echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
 ?>
 
 <html>
@@ -18,11 +15,16 @@ echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <br><br><div id="busca">
-        <form action="" method="post">
-            <input type="text" name="busca" placeholder="Pesquisar Cliente">
-            <input name="find" type="submit" value="BUSCAR">
-        </form>
+    <br><br>
+    <div id="busca">
+            <form action="" method="post">
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="busca" placeholder="Pesquisar Cliente">
+                </div>
+                <button name="find" type="submit" class="btn btn-success">Buscar
+                    <span class="glyphicon glyphicon-search">
+                </button>
+            </form>
         <?php
         if (isset($_POST['busca']))
         {
@@ -37,16 +39,21 @@ echo '<h4><b>TOTAL DE CLIENTES = </b>' . $resultado['total'];
                 }
                 else
                 {
-                    echo "<pre>Nome do cliente: " . $dados['nome']; 
+                    echo "<pre>Resultado da busca<br>Nome do cliente: " . $dados['nome']; 
                     echo "<br>Endereço: " . $dados['endereco']; 
                     echo "<br>Cidade: " . $dados['cidade']; 
-                    echo '<br>'.$dados [ 'estado'] ;
+                    echo '<br>'.$dados ['estado'];
                 }  
             }  
         }
         ?>
     </div><br>
-    <table id="t1"class="table table-dark table-hover">
+    <?php
+        $query = mysqli_query($conexao,"SELECT count(*) as total from cliente");
+        $resultado = mysqli_fetch_assoc($query);
+    ?>
+        <pre><b>TOTAL DE CLIENTES = <?php echo $resultado['total']; ?></b></pre>
+        <table id="t1"class="table table-dark table-hover">
         <thead> 
             <tr>
                 <th>Codigo</th>

@@ -1,7 +1,11 @@
 body{
     background-image: url(c.jpg);
+    background-position: auto;
     position: relative;
     font-family: 'Arsenal', sans-serif;
     color: dimgray;
-    background-position: 50% 70%;
+}
+
+form#form-cliente{
+    margin: auto;
 }

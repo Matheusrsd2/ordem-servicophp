@@ -7,7 +7,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
 
 $query = mysqli_query($conexao,"SELECT count(*) as total from produto");
 $resultado = mysqli_fetch_assoc($query);
-echo '<h4><b><br>TOTAL DE PRODUTOS = </b>' . $resultado['total'];
+echo '<h4><b><br>TOTAL DE PRODUTOS -> </b>' . $resultado['total'];
 ?>
 
 <html>
@@ -18,10 +18,15 @@ echo '<h4><b><br>TOTAL DE PRODUTOS = </b>' . $resultado['total'];
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <br><br><div id="busca">
+    <br><br>
+    <div id="busca">
         <form action="" method="post">
-            <input type="text" name="busca" placeholder="Buscar Produto">
-            <input name="find" type="submit" value="BUSCAR">
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="busca" placeholder="Pesquisar Produto">
+            </div>
+            <button name="find" type="submit" class="btn btn-success">Buscar
+                <span class="glyphicon glyphicon-search">
+            </button>
         </form>
         <?php
         if (isset($_POST['busca']))

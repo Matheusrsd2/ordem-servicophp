@@ -42,7 +42,7 @@
             <select class="form-control" name="status">
             <option>ATIVO</option>
         </div>
-        <br><input type="submit" class="btn btn-warning"" value="Cadastrar">
+        <br><input type="submit" class="btn btn-warning" value="Cadastrar">
     </form>
 
 </body>

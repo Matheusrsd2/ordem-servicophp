@@ -1,5 +1,6 @@
 body{
     background-image: url(c.jpg);
+    background-position: auto;
     color: aliceblue;
     font-family: 'Arsenal', sans-serif;
 }
@@ -12,4 +13,8 @@ table#t1 {
     margin:auto;
     width: 90%;
     height: 20%;
+}
+
+pre#total{
+    margin: auto;
 }
