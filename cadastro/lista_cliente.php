@@ -29,7 +29,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
         if (isset($_POST['busca']))
         {
             $nome = ($_POST['busca']);
-            $sql = "SELECT * FROM cliente where nome like '%$nome%'";
+            $sql = "SELECT * FROM cliente where nome like '$nome%'";
             $resultado = mysqli_query($conexao, $sql);
             while ($dados = mysqli_fetch_assoc($resultado))
             {
@@ -43,6 +43,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
                     echo "<br>Endereço: " . $dados['endereco']; 
                     echo "<br>Cidade: " . $dados['cidade']; 
                     echo '<br>'.$dados ['estado'];
+                    echo '</pre>';
                 }  
             }  
         }

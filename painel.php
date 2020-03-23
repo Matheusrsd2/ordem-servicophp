@@ -47,6 +47,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
                     <th style="font-family: 'Arsenal'">Técnico</th>
                     <th style="font-family: 'Arsenal'">Produto</th>
                     <th style="font-family: 'Arsenal'">Data de Criação</th>
+                    <th style="font-family: 'Arsenal'">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +58,7 @@ $result = $conexao->query($sql) or die ($conexao->error);
                     <td><?php echo $dados['tecnico']; ?></td>
                     <td><?php echo $dados['produto']; ?></td>
                     <td><?php echo $dados['created_at']; ?></td>
+                    <td><?php echo $dados['status']; ?></td>
                     <td>
                         <a href="javascript: if(confirm('Tem certeza que deseja CANCELAR?')) 
                             location.href='cancelar_os.php?id=<?php echo $dados['id'];?>'" 

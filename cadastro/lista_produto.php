@@ -43,7 +43,8 @@ echo '<h4><b><br>TOTAL DE PRODUTOS -> </b>' . $resultado['total'];
                 else
                 {
                     echo "<pre>Produto: " . $dados['nome']; 
-                    echo "<br>Referência: " . $dados['referencia']; 
+                    echo "<br>Referência: " . $dados['referencia'];
+                    echo '</pre>'; 
                 }  
             }  
         }
@@ -55,6 +56,7 @@ echo '<h4><b><br>TOTAL DE PRODUTOS -> </b>' . $resultado['total'];
                 <th>Codigo</th>
                 <th>Nome</th>
                 <th>Referência</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -64,9 +66,9 @@ echo '<h4><b><br>TOTAL DE PRODUTOS -> </b>' . $resultado['total'];
                 <td><?php echo $dados['nome']; ?></td>
                 <td><?php echo $dados['referencia']; ?></td>
                 <td>
-                    <a href="javascript: if(confirm('Tem certeza que deseja Inativar Produto?')) 
-                        location.href='cancelar_cliente.php?id=<?php echo $dados['id'];?>'" 
-                        style="text-decoration:none"><button class="btn btn-danger"><font color="white">Inativar</font>
+                    <a href="javascript: if(confirm('Tem certeza que deseja deletar esse Produto?')) 
+                        location.href='delete_produto.php?id=<?php echo $dados['id'];?>'" 
+                        style="text-decoration:none"><button class="btn btn-danger"><font color="white">Deletar</font>
                     </a></button>
                     <a href="edit_produto.php?id=<?php echo $dados['id'];?>" style="text-decoration:none"><button class="btn btn-info"><font color="white">Alterar</font>
                     </a></button>
